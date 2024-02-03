@@ -315,24 +315,6 @@ int ti_bop(int size, TI_REAL const *const *inputs, TI_REAL const *options, TI_RE
 int ti_cci_start(TI_REAL const *options);
 int ti_cci(int size, TI_REAL const *const *inputs, TI_REAL const *options, TI_REAL *const *outputs);
 
-/* CandleStick Patterns */
-/* Type: indicator */
-/* Input arrays: 4    Options: 0    Output arrays: 1 */
-/* Inputs: high, low, close, open */
-/* Options: pattern */
-/* Outputs: cdl */
-int ti_cdl_start(TI_REAL const* options);
-int ti_cdl(int size, TI_REAL const* const* inputs, TI_REAL const* options, TI_REAL* const* outputs);
-
-
-/* CandleStick Patterns */
-/* Type: indicator */
-/* Input arrays: 4    Options: 1    Output arrays: 1 */
-/* Inputs: high, low, close, open */
-/* Options: pattern, penetration */
-/* Outputs: cdl */
-int ti_cdl2(int size, TI_REAL const* const* inputs, TI_REAL const* options, TI_REAL* const* outputs);
-
 
 /* Vector Ceiling */
 /* Type: simple */
