@@ -2,6 +2,9 @@
 *.a
 *.ca
 
+# IDE files
+.idea
+
 cli
 cli.exe
 smoke
