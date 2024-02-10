@@ -59,10 +59,6 @@ extern "C" {
 #endif
 
 
-const char* tc_version(void);
-long int tc_build(void);
-int tc_candle_count(void);
-
 #define TC_OKAY 0
 #define TC_INVALID_OPTION 1
 #define TC_OUT_OF_MEMORY 2
@@ -81,6 +77,10 @@ typedef uint64_t tc_set; /* Stores a set of candles. */
 
 
 #define TC_CANDLE_COUNT 26 /* Total number of recognized candle patterns. */
+
+inline const char* tc_version(void) {return TC_VERSION;}
+inline long int tc_build(void) {return TC_BUILD;}
+inline int tc_candle_count(void) {return TC_CANDLE_COUNT;}
 
 #define TC_NONE (0)
 #define TC_ALL ((1L<<26)-1)

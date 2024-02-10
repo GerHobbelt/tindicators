@@ -38,9 +38,7 @@
 
 
 
-const char* tc_version(void) {return TC_VERSION;}
-long int tc_build(void) {return TC_BUILD;}
-int tc_candle_count(void) {return TC_CANDLE_COUNT;}
+
 
 
 
