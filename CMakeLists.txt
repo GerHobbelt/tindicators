@@ -4,6 +4,7 @@ project(libindicators)
 # Set the C standard and optimization/debug flags
 set(CMAKE_CXX_STANDARD 17)
 #set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wshadow -Wconversion -pedantic -O2 -g")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_INIT} ${CMAKE_CXX_FLAGS} -fPIC")
 
 ## Include directories
 #include_directories(${CMAKE_SOURCE_DIR})
