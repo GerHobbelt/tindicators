@@ -406,7 +406,6 @@ void test_localbuffer() {
 
 
 int main() {
-
     printf("TI TEST SUITE\n");
     lrun("buffer", test_buffer());
     lrun("localbuffer", test_localbuffer());

@@ -84,6 +84,7 @@ $(AMAL): indicators.h candles.h
 	$(CC) -E -P $(CCFLAGS) $< -o $@ -D TI_SKIP_SYSTEM_HEADERS -D __TI_INDICATORS_H__ -D __TC_CANDLES_H__ -D __BUFFER_H__ -D __LOCALBUFFER_H__ -D __MINMAX_H__
 
 
+.PHONY: clean
 clean:
 	rm -f *.a
 	rm -f *.exe
@@ -93,6 +94,7 @@ clean:
 	rm -f *.ca
 	rm -f indicators/*.ca
 	rm -f utils/*.ca
+	rm -f pst_indicators/*.o
 
 veryclean:
 	rm -f *.a
@@ -108,5 +110,6 @@ veryclean:
 	rm -f candles.h
 	rm -f candles.c
 	rm -f tiamalgamation.c
+	rm -f pst_indicators/*.ca
 	rm -f -r docs
 

@@ -355,10 +355,10 @@ foreach func $indicators {
     set opt_names "{\"[join $opt_names {","}]\",0}"
     set out_names "{\"[join $out_names {","}]\",0}"
 
-    append indicators_c "    {\"$fn\", \"$n\", ti_[set fn]_start, ti_[set fn], $ref, $type, $in, $opt, $out, $in_names, $opt_names, $out_names, $stream_new, $stream_run, $stream_free},"
+    append indicators_c "    {\"$fn\", \"$n\", ti_[set fn]_start, ti_[set fn], $ref, $type, $in, $opt, $out, $in_names, $opt_names, $out_names, $stream_new, $stream_run, $stream_free},\n"
 }
 
-append indicators_c "    {0,0,0,0,0,0,0,0,0,{0,0},{0,0},{0,0},0,0,0}"
+append indicators_c "    {0,0,0,0,0,0,0,0,0,{0,0},{0,0},{0,0},0,0,0}\n"
 
 append indicators_c "};"
 
