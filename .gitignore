@@ -1,2 +1,26 @@
 venv/
 build/
+
+*.o
+*.a
+*.ca
+
+# IDE files
+.idea
+
+cli
+cli.exe
+smoke
+smoke.exe
+smoke_amal
+smoke_amal.exe
+fuzzer
+fuzzer.exe
+example1
+example1.exe
+example2
+example2.exe
+sample
+sample.exe
+benchmark
+benchmark.exe

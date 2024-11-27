@@ -1,6 +1,24 @@
 /*
- * This file is part of tindicators, licensed under GNU LGPL v3.
- * Author: Ilya Pikulin <ilya.pikulin@gmail.com>, 2019
+ * Tulip Indicators
+ * https://tulipindicators.org/
+ * Copyright (c) 2010-2020 Tulip Charts LLC
+ * Lewis Van Winkle (LV@tulipcharts.org)
+ *
+ * This file is part of Tulip Indicators.
+ *
+ * Tulip Indicators is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as published by the
+ * Free Software Foundation, either version 3 of the License, or (at your
+ * option) any later version.
+ *
+ * Tulip Indicators is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License
+ * for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Tulip Indicators.  If not, see <http://www.gnu.org/licenses/>.
+ *
  */
 
 
@@ -59,19 +77,22 @@
     ((ptr)->buf_info).offset_##name = *(&((ptr)->buf_info).offset_##name-3) + *(&((ptr)->buf_info).offset_##name-4); \
     ((ptr)->buf_info).size_##name = size; \
     ((ptr)->buf_info).index_##name = -1; \
-} while (0);
+} while (0)
 #define BUFFERS_SIZE(ptr) (*((int*)(&((ptr)->buf_info)+1)-3) + *((int*)(&((ptr)->buf_info)+1)-4))
-#define BUFFER_AT(result, ptr, name, delta) { \
+#define BUFFER_AT(result, ptr, name, delta) do { \
     int idx = ((ptr)->buf_info).index_##name + delta; \
     while (idx >= ((ptr)->buf_info).size_##name) { idx -= ((ptr)->buf_info).size_##name; } \
     while (idx < 0) { idx += ((ptr)->buf_info).size_##name; } \
     result = *((TI_REAL*)(&((ptr)->buf_info) + 1) + ((ptr)->buf_info).offset_##name + idx); \
-}
+} while (0)
 #define BUFFER_AT1(ptr, name, delta) \
     (*((TI_REAL*)(&((ptr)->buf_info) + 1) + ((ptr)->buf_info).offset_##name + (((ptr)->buf_info).index_##name + delta + ((ptr)->buf_info).size_##name) % ((ptr)->buf_info).size_##name))
-#define BUFFER_PUSH(ptr, name, value) { \
+#define BUFFER_PUSH(ptr, name, value) do { \
     int idx = ((ptr)->buf_info).index_##name + 1; \
     if (idx == ((ptr)->buf_info).size_##name) { idx = 0; } \
     *((TI_REAL*)(&((ptr)->buf_info) + 1) + ((ptr)->buf_info).offset_##name + idx) = value; \
     ((ptr)->buf_info).index_##name = idx; \
-}
+} while (0)
+
+
+#endif /*__LOCALBUFFER_H__*/
