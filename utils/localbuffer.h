@@ -22,7 +22,8 @@
  */
 
 
-#pragma once
+#ifndef __LOCALBUFFER_H__
+#define __LOCALBUFFER_H__
 
 #include "../indicators.h"
 
