@@ -75,7 +75,7 @@ int ta_offset;
 
 
 /* Generate some fake bar data to test on. */
-void generate_inputs() {
+void generate_inputs(void) {
     TI_REAL *open = in[0];
     TI_REAL *high = in[1];
     TI_REAL *low = in[2];

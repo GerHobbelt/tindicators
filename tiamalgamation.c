@@ -1277,11 +1277,11 @@ const tc_candle_info *tc_find_candle(const char *name);
 const tc_candle_info *tc_get_info(tc_set pattern);
 
 
-tc_config const *tc_config_default(); /* Get default configuration. */
+tc_config const *tc_config_default(void); /* Get default configuration. */
 void tc_config_set_to_default(tc_config *config); /* Initializes a configuration to the default values. */
 
 
-tc_result *tc_result_new(); /* Create new result container. */
+tc_result *tc_result_new(void); /* Create new result container. */
 void tc_result_free(tc_result *result); /* Free result container. */
 int tc_result_count(const tc_result *result); /* Return number of bars with one or more patterns. */
 int tc_result_pattern_count(const tc_result *result); /* Return total number of patterns found. */
@@ -4391,7 +4391,7 @@ struct tc_result {
     int pattern_count;
     tc_hit *hits;
 };
-tc_config const *tc_config_default() {
+tc_config const *tc_config_default(void) {
     static tc_config default_config = {
         .period = 10,
         .body_none = 0.05,
@@ -4468,7 +4468,7 @@ const tc_candle_info *tc_get_info(tc_set pattern) {
 void tc_config_set_to_default(tc_config *config) {
     memcpy(config, tc_config_default(), sizeof(tc_config));
 }
-tc_result *tc_result_new() {
+tc_result *tc_result_new(void) {
     tc_result *k = malloc(sizeof(tc_result));
     if (!k) return 0;
     memset(k, 0, sizeof(tc_result));

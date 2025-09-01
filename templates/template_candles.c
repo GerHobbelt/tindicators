@@ -51,7 +51,7 @@ struct tc_result {
 };
 
 
-tc_config const *tc_config_default() {
+tc_config const *tc_config_default(void) {
     static tc_config default_config = {
         .period = 10,
 
@@ -125,7 +125,7 @@ void tc_config_set_to_default(tc_config *config) {
 }
 
 
-tc_result *tc_result_new() {
+tc_result *tc_result_new(void) {
     tc_result *k = malloc(sizeof(tc_result));
     if (!k) return 0;
 

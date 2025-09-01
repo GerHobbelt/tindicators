@@ -111,8 +111,8 @@ struct ti_indicator_info ti_indicators[] = {    {"abs", "Vector Absolute Value",
     {"ppo", "Percentage Price Oscillator", ti_ppo_start, ti_ppo, 0, TI_TYPE_INDICATOR, 1, 2, 1, {"real",0}, {"short_period","long_period",0}, {"ppo",0}, 0, 0, 0},
     {"psar", "Parabolic SAR", ti_psar_start, ti_psar, 0, TI_TYPE_OVERLAY, 2, 2, 1, {"high","low",0}, {"acceleration_factor_step","acceleration_factor_maximum",0}, {"psar",0}, 0, 0, 0},
 
-    {"pti_rsi", "persistent Relative Strength Index", ti_rsi_start, pst_ti_rsi, TI_TYPE_INDICATOR, 1, 1, 1, {"real",0}, {"period",0}, {"rsi",0}},
-    // {"pti_sma", "persistent Simple Moving Average", ti_sma_start, pst_ti_sma, TI_TYPE_OVERLAY, 1, 1, 1, {"real",0}, {"period",0}, {"sma",0}},    
+    {"pti_rsi", "persistent Relative Strength Index", ti_rsi_start, pst_ti_rsi, 0, TI_TYPE_INDICATOR, 1, 1, 1, {"real",0}, {"period",0}, {"rsi",0}},
+    // {"pti_sma", "persistent Simple Moving Average", ti_sma_start, pst_ti_sma, 0, TI_TYPE_OVERLAY, 1, 1, 1, {"real",0}, {"period",0}, {"sma",0}},    
 
     {"pvi", "Positive Volume Index", ti_pvi_start, ti_pvi, 0, TI_TYPE_INDICATOR, 2, 0, 1, {"close","volume",0}, {"",0}, {"pvi",0}, 0, 0, 0},
     {"qstick", "Qstick", ti_qstick_start, ti_qstick, 0, TI_TYPE_INDICATOR, 2, 1, 1, {"open","close",0}, {"period",0}, {"qstick",0}, 0, 0, 0},
